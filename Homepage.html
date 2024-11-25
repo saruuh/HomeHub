@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+      body, h1, h2, h3, p, div, a, img, header, footer {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+    background-color: #ffffff; /* Dark background for the body */
+    color: #333; /* Light gray text color for better readability on dark backgrounds */
+}
+
+a {
+    color: ##736b8c; /* White text for links to stand out on the dark background */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: ##736b8c; /* Slightly lighter white on hover for distinction */
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category img {
+    width: 200px;
+    height: 200px;
+}
+
+/* Bottom Section */
+.bottom-section {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}	
+
+.category {
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; /* Dark gray background for the header */
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
+}
+
+header img {
+    height: 50px;
+}
+
+header a {
+	color: black;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Main Content Area */
+.website-vision {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1; /* Very dark gray for sections */
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.website-vision h1 {
+    color: #333; /* Lighter gray for headings */
+}
+
+.website-vision p {
+    color: #555; /* Medium gray for text */
+}
+
+/* Layout Containers */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ensures proper spacing between offers and reviews */
+    padding: 20px;
+    gap: 20px;
+}
+
+.offers-container {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.reviews-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.offer, .review {
+    background-color: #ffffff; /* Dark gray for card backgrounds */
+    padding: 15px;
+    border: 2px solid #ccc; /* Slightly lighter border for contrast */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow for 3D effect */
+    transition: transform 0.2s ease;
+}
+
+.offer:hover, .review:hover {
+    transform: scale(1.05); /* Smooth scaling effect on hover */
+}
+
+.offer img, .review img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f1f1f1; /* Matching the website vision background */
+    color: #ccc; /* Light gray text for readability */
+    text-align: center;
+    padding: 15px;
+}
+
+.social-icon {
+    width: 24px;
+    height: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .offers-container, .reviews-container {
+        grid-template-columns: repeat(2, 1fr); /* Adjust for medium screens */
+    }
+
+    .category {
+        width: 45%; /* Adjust category width for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements on smaller screens */
+        text-align: center;
+    }
+
+    .main-container {
+        flex-direction: column; /* Stack offers and reviews vertically on smaller screens */
+    }
+
+    .offers-container, .reviews-container {
+        width: 100%; /* Full width for smaller screens */
+        grid-template-columns: 1fr; /* Single column grid for smaller screens */
+    }
+
+    .category {
+        width: 100%; /* Full width categories on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px; /* Reduce padding on very small screens */
+    }
+
+    .main-container {
+        padding: 10px; /* Reduce padding for the main container */
+    }
+}
+		
+		#offer7 {
+		display: none; /* Hides the elements initially */
+		}
+		#offer8 {
+		display: none; /* Hides the elements initially */
+		}
+		#offer9 {
+		display: none; /* Hides the elements initially */
+		}
+		
+			#more-button {
+		margin: 0 auto; /* Automatically centers the button horizontally */
+		padding: 7px 14px; /* Adjust padding for size */
+		font-size: 20px; /* Button font size */
+		display: block; /* Ensures the button behaves as a block-level element */
+		font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+		background-color: #ffffff; /* White background */
+		border: 2px solid #a49cbc; /* Add a border for better visibility */
+		border-radius: 10px; /* Rounded corners */
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+		cursor: pointer; /* Pointer cursor on hover */
+		transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+		position: relative; /* Keeps flexibility for further adjustments */
+		text-align: center; /* Centers the text inside the button */
+	}
+
+
+		/* Hover effect */
+		#more-button:hover {
+			background-color: #a49cbc; /* Subtle color change on hover */
+			color: #ffffff; /* Change text color to white */
+			transform: scale(1.05); /* Slight scaling for interactivity */
+		}
+
+		/* Active (clicked) effect */
+		#more-button:active {
+			background-color: #736b8c; /* Darker background when clicked */
+			transform: scale(0.95); /* Shrink slightly for feedback */
+		}
+		
+		/* Toggle Button */
+        .theme-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            margin-right: 20px;
+        }
+
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 30px;
+            transition: 0.4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        input:checked + .slider {
+            background-color: #333;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+		
+		
+
+    </style>
+</head>
+
+<header>
+    <img src="Pics/logo.jpg" alt="logo">
+    <a href="Homepage.html" accesskey="h" target="_self">Home Page</a>
+    <a href="buyer.html" accesskey="b" target="_self">Buyer</a> 
+    <a href="Seller.html" accesskey="s" target="_self">Seller</a>
+    <a href="Category.html" accesskey="l" target="_self">Living Room</a>
+    <a href="bedroom.html" accesskey="r" target="_self">Bedroom</a>
+    <a href="Outdoor.html" accesskey="o" target="_self">Outdoor</a>
+    <a href="cart.html"><img src="Pics/cart.png" alt="cart" accesskey="c" target="_self">Cart</a>
+	<!-- Theme Toggle -->
+    <label class="theme-toggle">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+    </label>
+	
+</header>
+<hr>
+<body>
+
+<script>
+// Toggle Theme Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleSwitch = document.getElementById('theme-toggle');
+
+    toggleSwitch.addEventListener('change', () => {
+        if (toggleSwitch.checked) {
+            // Redirect to the Dark Mode version
+            window.location.href = "HomepageDark.html";
+        } else {
+            // Redirect to the Light Mode version
+            window.location.href = "Homepage.html";
+        }
+    });
+});
+</script>
+<script src="HPscript.js" defer> </script>
+
+<div class="website-vision">
+    <h1>HomeHub</h1>
+    <p>Vision <br> Home Hub strives to be the go-to global platform that seamlessly connects buyers and sellers in the furniture market. We aim to provide a diverse selection of high-quality furniture, offering users an intuitive and enjoyable experience for browsing, purchasing, and selling both new and pre-owned items. With a focus on trust and transparency, Home Hub is dedicated to simplifying the furniture shopping journey, ensuring a secure checkout process. Our mission is to simplify furniture shopping and selling by offering browsability ease and secure check-out.</p>
+	<div id="current-week" style="text-align: center; padding: 20px; color: #555;"></div>
+</div>
+
+<h2 class="styled-header"><pre>                      Offers                                                                                                Reviews </pre></h2>
+
+<div class="main-container">
+    <div class="offers-container">
+        <div class="offer">
+            <h3>New</h3>
+            <img src="Pics/offer1.jpg" alt="Dresser">
+            <p>6-Drawer Dresser - Walnut <br> 2000SAR <br>Condition: New</p>
+        </div>
+
+        <div class="offer">
+            <h3>New</h3>
+            <img src="Pics/offer2.jpg" alt="Couch">
+            <p>3-Piece L-Shaped Sectional <br> 6000SAR <br>Condition: New</p>
+        </div>
+
+        <div class="offer">
+            <h3>Discount</h3>
+            <img src="Pics/offer3.jpg" alt="Sectional">
+            <p>Outdoor 3-Piece L-Shaped Sectional <br> <strike>4500SAR</strike> 4000SAR <br>Condition: New</p>
+        </div>
+
+        <div class="offer">
+            <h3>Discount</h3>
+            <img src="Pics/offer4.jpg" alt="Table">
+            <p>Outdoor Expandable Dining Table <br> <strike>2500SAR</strike> 2000SAR <br>Condition: Used</p>
+        </div>
+
+        <div class="offer">
+            <h3>Discount</h3>
+            <img src="Pics/offer5.jpg" alt="Chair">
+            <p>Crescent Leather Swivel Chair <br> <strike>2000SAR</strike> 1200SAR <br>Condition: Used</p>
+        </div>
+
+        <div class="offer">
+            <h3>Discount</h3>
+            <img src="Pics/offer6.jpg" alt="Bed">
+            <p>Andes Bed - Metal Legs <br> <strike>5000SAR</strike> 2800SAR <br>Condition: Used</p>
+        </div>
+		
+		<div class="offer" id= "offer7">
+            <h3>Discount</h3>
+            <img src="Pics/offer7.jpg" alt="Dresser">
+            <p>Parker 6-Drawer Dresser <br> <strike>6000SAR</strike> 3000SAR <br>Condition: New</p>
+        </div>
+		
+		<div class="offer" id="offer8">
+            <h3>Discount</h3>
+            <img src="Pics/offer8.jpg" alt="Bed">
+            <p> Margot Raffia Nightstand <br> <strike>2000SAR</strike> 1800SAR <br>Condition: New</p>
+        </div>
+		
+		<div class="offer" id="offer9">
+            <h3>Discount</h3>
+            <img src="Pics/offer9.jpg" alt="Bed">
+            <p> Gansevoort Canopy Bed <br> <strike>5000SAR</strike> 4500SAR <br>Condition: New</p>
+        </div>
+		
+		<button id="more-button" style="display: block; margin: 20px auto;">More</button>
+    </div>
+
+    <div class="reviews-container">
+		
+		<div class="review">
+			<p>Rating: ★★★★★ (5/5)<br>Feedback: After months of deliberation, I finally decided to invest in some new furniture for my patio, and I couldn't be happier with the decision.</p>
+			<div class="review-hover" style="display: none;">
+				<p>Customer: Abdullah A.</p>
+				<p>Product: Westport Outdoor Lounge Chair </p>
+				<p>Product Rating: ★★★★★ (5/5)</p>
+			</div>
+		</div>
+		
+		<div class="review">
+			<p>Rating: ★★★★★ (5/5)<br>Feedback: Ordered a bookcase and a coffee table. Beautiful pieces of furniture, very solid and excellent quality. Honestly exceeded my expectations.</p>
+			<div class="review-hover" style="display: none;">
+				<p>Customer: Mona T.</p>
+				<p>Product: Wooden Bookshelf in Acron </p>
+				<p>Product Rating: ★★★★★ (4.7/5)</p>
+			</div>
+		</div>
+
+
+        <div class="review">
+			<p>Rating: ★★★★★ (5/5)<br>Feedback: Excellent service and good quality product, especially for the price!</p>
+			<div class="review-hover" style="display: none;">
+				<p>Customer: Reem Khalid</p>
+				<p>Product: Premium Office Chair</p>
+				<p>Product Rating: ★★★★★ (4.8/5)</p>
+			</div>
+		</div>
+
+    </div>
+</div>
+
+<h2 style="text-align: center;"> Categories </h2>
+
+<div class="bottom-section">
+    <div class="category">
+        <a href="Category.html">
+            <img src="Pics/lampbg.jpg" alt="lamp">
+            <h2>Living Room</h2>
+        </a>
+    </div>
+
+    <div class="category">
+        <a href="bedroom.html">
+            <img src="Pics/bedroom.jpg" alt="Bedroom">
+            <h2>Bedroom</h2>
+        </a> 
+    </div>
+
+    <div class="category">
+        <a href="Outdoor.html">
+            <img src="Pics/outdoor.jpg" alt="Outdoor">
+            <h2>Outdoor</h2>
+        </a> 
+    </div>
+</div>
+
+</body>
+<hr>
+
+<footer>
+    <p>&copy; HomeHub. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:contact@HomeHub.com">contact@HomeHub.com</a></p>
+    <a href=""><img src="Pics/Instagram_icon.png" alt="instagram" class="social-icon"></a>
+</footer>
+
+</html>

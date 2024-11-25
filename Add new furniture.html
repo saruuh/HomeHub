@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Add New Furniture</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            display: flex;
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb {
+            margin: 20px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .breadcrumb span {
+            color: #999;
+        }
+
+        .form-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 30px;
+        }
+
+        .image-placeholder {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            width: 100%;
+            height: 250px;
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .image-placeholder input[type="file"] {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"], 
+        .form-group input[type="number"], 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group .price-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group .price-wrapper input {
+            flex: 1;
+            margin-right: 5px;
+        }
+
+        .form-group .price-wrapper span {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100px;
+            resize: none;
+        }
+
+        .radio-group {
+            display: flex;  
+            justify-content: flex-start;
+            gap: 10px; 
+        }
+
+        .radio-group label {
+            font-weight: normal; 
+            margin-right: 5px; 
+        }
+
+        .submit-btn {
+            background-color: #a49cbc;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .submit-btn:hover {
+            background-color: #736b8c;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            margin-top: 50px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            width: 24px; 
+            height: auto; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Pics/logo.jpg" alt="logo">
+        <a href="Homepage.html" accesskey="h" target="_self">Home Page</a> 
+        <a href="buyer.html" accesskey="b" target="_self">Buyer</a> 
+        <a href="Seller.html" accesskey="s" target="_self">Seller</a>
+        <a href="Category.html" accesskey="l" target="_self">Living Room</a>
+        <a href="bedroom.html" accesskey="r" target="_self">Bedroom</a>
+        <a href="Outdoor.html" accesskey="o" target="_self">Outdoor</a>
+        <a href="cart.html"><img src="Pics/cart.png" alt="cart" accesskey="c" target="_self">Cart</a>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="Homepage.html">Homepage</a> &gt;
+        <a href="Seller.html">Seller</a> &gt;
+        <span>Add New Furniture</span>
+    </nav>
+
+    <div class="form-container">
+        <h2>Add New Furniture</h2>
+        <div class="form-grid">
+            <div class="image-placeholder">
+                <label for="product-image-upload"></label>
+                <input type="file" id="product-image-upload" name="product-image" accept="image/*">
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="product-name">Product Name*</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-description">Product Description*</label>
+                    <textarea id="product-description" name="product-description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price*</label>
+                    <div class="price-wrapper">
+                        <input type="number" id="price" name="price" min="500" required>
+                        <span>SR</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Categories*</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="category" value="Living Room"> Living Room</label>
+                        <label><input type="radio" name="category" value="Bedroom"> Bedroom</label>
+                        <label><input type="radio" name="category" value="Outdoor"> Outdoor</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Usability Status*</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="status" value="New"> New</label>
+                        <label><input type="radio" name="status" value="Used"> Used</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer> 
+        <p>&copy; HomeHub. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:contact@HomeHub.com">contact@HomeHub.com</a></p>
+        <a href=""><img src="Pics/Instagram_icon.png" alt="instagram" class="social-icon"></a>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            const fileInput = document.getElementById('product-image-upload');
+    
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+    
+                const productName = document.getElementById('product-name').value.trim();
+                const productDescription = document.getElementById('product-description').value.trim();
+                const price = document.getElementById('price').value.trim();
+                const category = document.querySelector('input[name="category"]:checked');
+                const status = document.querySelector('input[name="status"]:checked');
+                const file = fileInput.files[0];
+    
+                if (!productName || !productDescription || !price || !category || !status || !file) {
+                    alert("All fields are required. Please fill in all the fields.");
+                    return;
+                }
+    
+                if (/^\d/.test(productName)) {
+                    alert("Product name cannot start with a number.");
+                    return;
+                }
+    
+                if (isNaN(price) || Number(price) <= 0) {
+                    alert("Price must be a valid positive number.");
+                    return;
+                }
+    
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imageData = e.target.result;
+    
+                    const product = {
+                        name: productName,
+                        description: productDescription,
+                        price: Number(price),
+                        category: category.value,
+                        status: status.value,
+                        image: imageData,
+                        purchases: 0 
+                    };
+    
+                    const products = JSON.parse(localStorage.getItem('sellerProducts')) || [];
+                    products.push(product);
+                    localStorage.setItem('sellerProducts', JSON.stringify(products));
+    
+                    alert(`Product "${productName}" has been added successfully!`);
+    
+                    form.reset();
+    
+                    window.location.href = 'Seller.html';
+                };
+    
+                if (file) {
+                    reader.readAsDataURL(file); 
+                }
+            });
+        });
+    </script>      
+
+</body>
+</html>

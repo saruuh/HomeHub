@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: #999;
+        }
+
+        .offers-title-box {
+            background-color: #a49cbc;
+            padding: 10px;
+            border-radius: 8px;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        .offers-title {
+            font-size: 24px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .offers-page {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .offers-section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            width: 45%;
+            border-radius: 8px;
+        }
+
+        .offers-container {
+            margin-top: 20px;
+        }
+
+        .offer-box {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-checkbox {
+            margin-right: 15px;
+        }
+
+        .offer-image {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .offer-details {
+            flex-grow: 1;
+        }
+
+        .offer-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .offer-details p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .delete-offer-btn {
+            background-color: #de9797;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 14px;
+            margin: 20px auto;
+        }
+
+        .delete-offer-btn:hover {
+            background-color: #de9797;
+            transform: scale(1.05);
+        }
+
+        .add-offer-section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            width: 40%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .upload-image-input, .offer-name-input, .offer-description-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .add-offer-btn {
+            background-color: #a49cbc;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 60%;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-left: 20%;
+        }
+
+        .add-offer-btn:hover {
+            background-color: #a49cbc;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            margin-top: 50px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            width: 24px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Pics/logo.jpg" alt="logo">
+        <a href="Homepage.html">Home Page</a> 
+        <a href="buyer.html">Buyer</a> 
+        <a href="Seller.html">Seller</a>
+        <a href="Category.html">Living Room</a>
+        <a href="bedroom.html">Bedroom</a>
+        <a href="Outdoor.html">Outdoor</a>
+        <a href="cart.html"><img src="Pics/cart.png" alt="cart">Cart</a>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="home.html">Homepage</a> &gt;
+        <a href="Seller.html">Seller</a> &gt;
+        <span>Make/Delete Offers</span>
+    </nav>
+
+    <div class="offers-title-box">
+        <h2 class="offers-title">My Offers</h2>
+    </div>
+
+    <div class="offers-page">
+        <div class="offers-section">
+            <div class="offers-container">
+                <div class="offer-box">
+                    <input type="checkbox" id="offer1" class="offer-checkbox">
+                    <img src="Pics/SofaSet.webp" alt="Sofa Set Image" class="offer-image">
+                    <div class="offer-details">
+                        <h3>Modern Sofa Set</h3>
+                        <p>Comfortable and stylish sofa set perfect for any living room.</p>
+                    </div>
+                </div>
+                <div class="offer-box">
+                    <input type="checkbox" id="offer2" class="offer-checkbox">
+                    <img src="Pics/Table.webp" alt="Dining Table Image" class="offer-image">
+                    <div class="offer-details">
+                        <h3>Elegant Dining Table</h3>
+                        <p>Spacious dining table with a sleek design for your dining area.</p>
+                    </div>
+                </div>
+                <div class="offer-box">
+                    <input type="checkbox" id="offer3" class="offer-checkbox">
+                    <img src="Pics/Bed.webp" alt="Bed Frame Image" class="offer-image">
+                    <div class="offer-details">
+                        <h3>Cozy Bed Frame</h3>
+                        <p>Durable and comfortable bed frame to enhance your bedroom.</p>
+                    </div>
+                </div>
+                <button class="delete-offer-btn">Delete</button>
+            </div>
+        </div>
+
+        <div class="add-offer-section">
+            <form>
+                <label for="offer-image-upload">Add Picture*</label>
+                <input type="file" id="offer-image-upload" class="upload-image-input">
+                <label for="offer-name">Offer Name*</label>
+                <input type="text" id="offer-name" class="offer-name-input">
+                <label for="offer-description">Offer Description*</label>
+                <textarea id="offer-description" class="offer-description-input" rows="4"></textarea>
+                <button type="submit" class="add-offer-btn">Add New Offer</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; HomeHub. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:contact@HomeHub.com">contact@HomeHub.com</a></p>
+        <a href=""><img src="Pics/Instagram_icon.png" alt="instagram" class="social-icon"></a>
+    </footer>
+
+    <script>
+        const deleteButton = document.querySelector('.delete-offer-btn');
+        const addOfferForm = document.querySelector('form');
+        const offersContainer = document.querySelector('.offers-container');
+
+        // Handle offer deletion
+        deleteButton.addEventListener('click', () => {
+            const checkboxes = document.querySelectorAll('.offer-checkbox');
+            const selectedOffers = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+
+            if (selectedOffers.length === 0) {
+                alert('Please select at least one offer');
+            } else if (confirm('Are you sure you want to delete the selected offers?')) {
+                selectedOffers.forEach(checkbox => {
+                    const offerBox = checkbox.closest('.offer-box');
+                    offerBox.remove();
+                });
+            }
+        });
+
+        // Handle new offer submission
+        addOfferForm.addEventListener('submit', event => {
+            event.preventDefault();
+
+            const imageInput = document.getElementById('offer-image-upload');
+            const nameInput = document.getElementById('offer-name');
+            const descriptionInput = document.getElementById('offer-description');
+
+            if (!imageInput.value || !nameInput.value || !descriptionInput.value) {
+                alert('Please fill out all fields');
+                return;
+            }
+
+            const newOfferBox = document.createElement('div');
+            newOfferBox.classList.add('offer-box');
+
+            newOfferBox.innerHTML = `
+                <input type="checkbox" class="offer-checkbox">
+                <img src="${URL.createObjectURL(imageInput.files[0])}" alt="${nameInput.value}" class="offer-image">
+                <div class="offer-details">
+                    <h3>${nameInput.value}</h3>
+                    <p>${descriptionInput.value}</p>
+                </div>
+            `;
+
+            offersContainer.insertBefore(newOfferBox, deleteButton);
+            imageInput.value = '';
+            nameInput.value = '';
+            descriptionInput.value = '';
+        });
+    </script>
+</body>
+</html>

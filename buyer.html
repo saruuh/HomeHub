@@ -1,0 +1,135 @@
+
+	<!DOCTYPE html>
+		<html>
+		
+		<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Buyer </title>
+		<style>
+        body {
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            display: flex;
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+		a:hover {
+			text-decoration: underline;
+		}
+       
+		.breadcrumb {
+            margin: 20px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .breadcrumb span {
+            color: #999;
+        }
+        .user-container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			height: 70vh;             
+			gap: 20px; 
+		}
+		.user:hover {
+            transform: scale(1.05);
+        }
+
+		.user {
+			width: 30%;
+			padding: 15px;
+			text-align: center;
+			background-color: #fff;
+			border: 2px solid #ccc;
+			border-radius: 8px;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+			transition: transform 0.2s;
+		}
+
+		.user img {
+			width: 300px;   
+			height: 300px;  
+			object-fit: cover;  
+		}
+		
+		footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            margin-top: 50px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+		.social-icon {
+             width: 24px; 
+             height: auto; 
+        }
+		</style>
+		</head>
+		
+		<body>
+			<header>
+				<img src="Pics/logo.jpg" alt="logo">
+				<a href="Homepage.html" accesskey="h" target="_self">Home Page</a> 
+				<a href="buyer.html" accesskey="b" target="_self">Buyer</a> 
+				<a href="Seller.html" accesskey="s" target="_self">Seller</a> 
+				<a href="Category.html" accesskey="l" target="_self">Living Room</a>
+				<a href="bedroom.html" accesskey="r" target="_self">Bedroom</a>
+				<a href="Outdoor.html" accesskey="o" target="_self">Outdoor</a>
+				<a href="cart.html"><img src="Pics/cart.png" alt="cart" accesskey="c" target="_self">Cart</a>
+			</header>
+
+			<nav class="breadcrumb">
+				<a href="Homepage.html">Homepage</a> &gt;
+				<span>Buyer</span>
+			</nav>
+		
+		<div class="user-container">
+			<div class="user">
+				<a href="cart.html"> <img src="Pics/cart.png" alt="Cart"> <h2>Cart</h2></a>
+			</div>
+			
+			<div class="user">
+				<a href="prevOrder.html"> <img src="Pics/Previous.png" alt="Arrow"> <h2>Previous Orders</h2></a>
+			</div>
+			
+			<div class="user">
+				<a href="Product Review.html"> <img src="Pics/Review.png" alt="Review"> <h2>Product Reviews</h2></a>
+			</div>
+		</div>
+		</body>
+		
+		<footer> 
+			<p>&copy; HomeHub. All rights reserved.</p>
+			<p>Contact us: <a href="mailto:contact@HomeHub.com">contact@HomeHub.com</a></p>
+			<a href=""> <img src="Pics/Instagram_icon.png" alt="instagram" class="social-icon"></a>
+		</footer>
+		</html>

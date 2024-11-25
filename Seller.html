@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb {
+            margin: 20px;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .breadcrumb span {
+            color: #999;
+        }
+
+        .seller-page {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .product-list {
+            width: 60%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            overflow-y: auto;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        .product-details {
+            flex-grow: 1;
+        }
+
+        .product-details h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .product-details p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .product-status {
+            color: #5a67d8;
+        }
+
+        .options-container {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .option img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .option button {
+            padding: 10px 20px;
+            background-color: #a49cbc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .option button:hover {
+            background-color: #736b8c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            margin-top: 50px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-icon {
+            width: 24px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="Pics/logo.jpg" alt="logo">
+        <a href="Homepage.html" accesskey="h" target="_self">Home Page</a>
+        <a href="buyer.html" accesskey="b" target="_self">Buyer</a>
+        <a href="Seller.html" accesskey="s" target="_self">Seller</a>
+        <a href="Category.html" accesskey="l" target="_self">Living Room</a>
+        <a href="bedroom.html" accesskey="r" target="_self">Bedroom</a>
+        <a href="Outdoor.html" accesskey="o" target="_self">Outdoor</a>
+        <a href="cart.html"><img src="Pics/cart.png" alt="cart" accesskey="c" target="_self">Cart</a>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="Homepage.html">Homepage</a> &gt;
+        <span>Seller</span>
+    </nav>
+
+    <div class="seller-page">
+        <div class="product-list">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+
+        <div class="options-container">
+            <div class="option">
+                <img src="Pics/add.svg" alt="Add New">
+                <h3>Add New Furniture</h3>
+                <a href="Add new furniture.html"><button>Add</button></a>
+            </div>
+            <div class="option">
+                <img src="Pics/edit2.png" alt="Make/Delete Offer">
+                <h3>Make/Delete Offers</h3>
+                <a href="Offers.html"><button>Manage</button></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; HomeHub. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:contact@HomeHub.com">contact@HomeHub.com</a></p>
+        <a href=""><img src="Pics/Instagram_icon.png" alt="instagram" class="social-icon"></a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productList = document.querySelector('.product-list');
+            const products = JSON.parse(localStorage.getItem('sellerProducts')) || [];
+
+            // Check if there are no products
+            if (products.length === 0) {
+                productList.innerHTML = '<p>No products available. Please add new products.</p>';
+                return;
+            }
+
+            // Render products dynamically
+            products.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.classList.add('product-item');
+
+                productItem.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="product-details">
+                        <h3>${product.name}</h3>
+                        <p>Price: SR ${product.price}</p>
+                        <p class="product-status">${product.status}</p>
+                        <p>Number of Purchases: ${product.purchases}</p>
+                    </div>
+                `;
+
+                productList.appendChild(productItem);
+            });
+        });
+    </script>
+</body>
+</html>

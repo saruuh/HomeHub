@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Orders</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+            background-color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .breadcrumb a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: #999;
+        }
+
+        .page-title {
+            text-align: left;
+            margin: 10px 20px;
+        }
+
+        .page-title h1 {
+            font-size: 32px;
+            color: #333;
+        }
+
+        .orders-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 20px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .orders-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            width: max-content;
+        }
+
+        .order-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-box h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .order-box p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            margin-top: auto; /* This pushes the footer to the bottom */
+        }
+
+        footer a {
+            color: #5a67d8;
+            text-decoration: none;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="Pics/logo.jpg" alt="logo">
+        <a href="Homepage.html" accesskey="h" target="_self">Home Page</a> 
+        <a href="buyer.html" accesskey="b" target="_self">Buyer</a> 
+        <a href="Seller.html" accesskey="s" target="_self">Seller</a> 
+        <a href="Category.html" accesskey="l" target="_self">Living Room</a>
+        <a href="bedroom.html" accesskey="r" target="_self">Bedroom</a>
+        <a href="Outdoor.html" accesskey="o" target="_self">Outdoor</a>
+        <a href="cart.html"><img src="Pics/cart.png" alt="cart" accesskey="c" target="_self">Cart</a>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="home.html">Homepage</a> &gt;
+        <a href="buyer.html">Buyer</a> &gt;
+        <span>Previous Orders</span>
+    </nav>
+
+    <section class="page-title">
+        <h1>Previous Orders</h1>
+    </section>
+
+    <div class="orders-section">
+        <div class="orders-container">
+            <div class="order-box">
+                <h3>Order Number: #12381</h3>
+                <p>Total: 700 SAR</p>
+                <p>Order Date: 2024-10-15</p>
+            </div>
+            <div class="order-box">
+                <h3>Order Number: #123473</h3>
+                <p>Total: 950 SAR</p>
+                <p>Order Date: 2024-10-12</p>
+            </div>
+            <div class="order-box">
+                <h3>Order Number: #12368</h3>
+                <p>Total: 500 SAR</p>
+                <p>Order Date: 2024-10-07</p>
+            </div>
+            <div class="order-box">
+                <h3>Order Number: #12349</h3>
+                <p>Total: 1200 SAR</p>
+                <p>Order Date: 2024-09-27</p>
+            </div>
+            <div class="order-box">
+                <h3>Order Number: #12345</h3>
+                <p>Total: 800 SAR</p>
+                <p>Order Date: 2024-09-24</p>
+            </div>
+            <div class="order-box">
+                <h3>Order Number: #12332</h3>
+                <p>Total: 650 SAR</p>
+                <p>Order Date: 2024-09-12</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 HomeHub. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:contact@HomeHub.com">contact@HomeHub.com</a></p>
+        <a href=""><img src="Pics/Instagram_icon.png" alt="instagram" class="social-icon"></a>
+    </footer>
+
+</body>
+</html>
